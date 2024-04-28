@@ -52,3 +52,6 @@ Form-Data 형식으로 받도록 설정되어있다.
 ### feat: JWT 발급 및 검증 클래스 작성
 
 ---
+### feat: 로그인 성공 시 JWT 발급
+![img.png](img.png)
+- 응답코드 200과 함께 응답헤더에 Authorization이라는 키값에 대한 JWT값을 확인할 수 있다.
