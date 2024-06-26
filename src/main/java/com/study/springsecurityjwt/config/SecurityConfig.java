@@ -1,5 +1,6 @@
 package com.study.springsecurityjwt.config;
 
+import com.study.springsecurityjwt.jwt.JWTFilter;
 import com.study.springsecurityjwt.jwt.JWTUtil;
 import com.study.springsecurityjwt.jwt.LoginFilter;
 import lombok.RequiredArgsConstructor;
@@ -54,8 +55,12 @@ public class SecurityConfig {
         http
                 .authorizeHttpRequests((auth) -> auth
                         .requestMatchers("/login", "/", "/join").permitAll()
-                        .requestMatchers("/admin").hasRole("ADMIN")
+                        .requestMatchers("/admin").hasRole("ADMIN") //DB에 권한이 ROLE_ADMIN 이면 hasRole, 그냥 ADMIN이면 hasAuthority 사용
                         .anyRequest().authenticated());
+
+        //JWTFilter 등록
+        http
+                .addFilterBefore(new JWTFilter(jwtUtil), LoginFilter.class);
 
         //필터 추가 LoginFilter()는 인자를 받음 (AuthenticationManager() 메소드에 authenticationConfiguration 객체를 넣어야 함) 따라서 등록 필요
         http
