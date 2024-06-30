@@ -81,3 +81,17 @@ Form-Data 형식으로 받도록 설정되어있다.
 
 ![img_5.png](images/img16.png)
 - admin 페이지 접근 시 오류가 뜬다.
+
+---
+### feat: refresh 토큰 발급 구현/JWTFilter 수정
+![img.png](images/19.png)
+- JSON으로 로그인 가능하게 코드 변경
+
+![img_1.png](images/20.png)
+- 로그인을 하면 Cookie에 refresh에 토큰이 담겨져 온다.
+
+![img_2.png](images/21.png)
+- 또한 Header에 access 키에 토큰이 담겨져 온다.
+
+---
+
