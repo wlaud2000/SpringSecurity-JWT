@@ -81,6 +81,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests((auth) -> auth
                         .requestMatchers("/login", "/", "/join").permitAll()
                         .requestMatchers("/admin").hasRole("ADMIN") //DB에 권한이 ROLE_ADMIN 이면 hasRole, 그냥 ADMIN이면 hasAuthority 사용
+                        .requestMatchers("/reissue").permitAll()
                         .anyRequest().authenticated());
 
         //JWTFilter 등록

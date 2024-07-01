@@ -94,4 +94,14 @@ Form-Data 형식으로 받도록 설정되어있다.
 - 또한 Header에 access 키에 토큰이 담겨져 온다.
 
 ---
+### feat: reissue 경로 구현(Refresh로 Access 재발급)
+![img.png](images/22.png)
+- 로그인 시 발급받은 Access 토큰
 
+![img_1.png](images/23.png)
+- refresh 토큰은 cookie에 저장되어있으므로 reissue 경로로 요청을 보내면
+
+![img_2.png](images/24.png)
+- 200 OK 응답과 함께 새로운 Access 토큰이 발급된걸 볼 수있다.
+
+---
